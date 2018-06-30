@@ -19,7 +19,6 @@ app.set('views', path.join(__dirname, 'views'));
 //middleware that goes with parsing stuff.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
 
 //middleware for static files -- set static path
 app.use(express.static(path.join(__dirname, 'public')));
