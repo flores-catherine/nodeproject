@@ -30,7 +30,6 @@ function handleRegistration(req, res){
 }
 
 function handleLogin(req, res) {
-    passport.authenticate('local', {successRedirect:'/', failureRedirect: 'pages/login', fauilureFlash: true}), function(req, res)
     var email = req.body.email;
     var password = req.body.password;
     console.log(email); 
