@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var expressValidator = require('express-validator');
 var session = require('express-session');
 var passport = require('passport');
