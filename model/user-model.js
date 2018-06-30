@@ -1,5 +1,4 @@
 var express = require('express');
-var passport = require('passport');
 
 //Get db URL from process environment variable
 const dbURL = process.env.DATABASE_URL;
