@@ -7,8 +7,8 @@
   },
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "node app.js"
+    "start": "node index.js",
+    "test": "node test.js"
   },
   "dependencies": {
     "bcrypt": "^2.0.1",
