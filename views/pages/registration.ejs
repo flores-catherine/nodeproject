@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+    <% include ../partials/head.ejs %>
     <title>Registration</title>
 </head>
 
 <body>
-
-    <div class="container">
-        <main class="main-login">
-           <div id="login-form">
-                <h1 id='registration'>Register For a New Account</h1>
-                <p>All fields are required </p>
-                <form method="post" action="/handleRegistration">
-                    <div class="form-group">
-                        <input name="firstName"  type="text" placeholder="First Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input name="lastName" type="text" placeholder="Last Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input name="email"  type="email" placeholder="email address"  required>
-                    </div>
-                    <div class="form-group">
-                        <input name="password" type="password" placeholder="password" required>
-                    </div>
-                    <button type="submit" class="btn btn-default">Register</button>
-                </form>
-            </div>
-        </main>
-    </div>
+<header>
+    <% include ../partials/header.ejs %>
+</header>
+<div class="container">
+    <main class="main-login">
+       <div id="login-form">
+            <h1 id='registration'>Register For a New Account</h1>
+            <p>All fields are required </p>
+            <form method="post" action="/handleRegistration">
+                <div class="form-group">
+                    <input name="firstName"  type="text" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <input name="lastName" type="text" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input name="email"  type="email" placeholder="email address"  required>
+                </div>
+                <div class="form-group">
+                    <input name="password" type="password" placeholder="password" required>
+                </div>
+                <button type="submit" class="btn btn-default">Register</button>
+            </form>
+        </div>
+    </main>
+</div>
 </body>
 </html>

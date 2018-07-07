@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+  <% include ../partials/head.ejs %>
 </head>
 
 <body>
-    <nav>
-        <a href="/render-login">Login</a>
-        <a href="/render-register">Register</a>
-        <a href="/render-cart">Cart</a>        
-    </nav>
-  
+    <header>
+        <% include ../partials/header.ejs %>
+    </header> 
+<main>
+    <div class="container">
+        <div class="row">
+            <h1 class="cursive">My Work</h1>
+            <p>Filter Results</p>
+            <form method="get" action="/filterProducts">
+                <select name="category">
+                    <option selected disabled>Filter by Category</option>
+                    <option value="1">Addams Family</option>
+                    <option value="2">Animals</option>
+                    <option value="13">Beauty and the Beast</option>
+                    <option value="3">Buffy the Vampire Slayer</option>
+                    <option value="14">Disney</option>
+                    <option value="4">Ghostbusters</option>
+                    <option value="5">Harry Potter</option>
+                    <option value="6">Hocus Pocus</option>
+                    <option value="15">Moana</option>
+                    <option value="7">People</option>
+                    <option value="8">Pokemon</option>
+                    <option value="9">Pop Culture</option>
+                    <option value="10">Scooby Doo</option>
+                    <option value="11">Star Wars</option>
+                    <option value="12">Wonder Woman</option>
+                </select>
+                <button type="submit" class="btn btn-default">Filter</button>
+            
+            </form>
+            <% products.forEach(function(product){%>
+                <div class="col-sm-3">
 
-<h1>You will see products and stuff here.</h1>
+                <div class="card">
+                    <img class="card-img-top" src="/images/<%= product.image %>" alt="<%= product.productname %>">
+                    <div class="card-body">
+                        <h2 class="card-title"><%= product.productname %></h2>
+                        <p class="card-text">Number in Stock: <%= product.numinstock %></p>
+                        <p class="card-text">Price: $<%= product.price %></p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
 
-    <h2></h2>
+            <%}); %>
+
+        </div>
+    </div>
+</main>
 </body>
 </html>

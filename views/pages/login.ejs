@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+    <% include ../partials/head.ejs %>
     <title>Login Screen</title>
 </head>
 
 <body>
-
+<header>
+    <% include ../partials/header.ejs %>
+</header>
 <div class="container">
     <h1>Login here</h1>
      <form method="post" action="/handleLoginRequest">
