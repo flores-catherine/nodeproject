@@ -14,15 +14,21 @@
                     <li>
                         <a href="/">Home</a>
                     </li>
-                    <li>
-                        <a href="/render-login">Login</a>
-                    </li>
-                    <li>
-                        <a href="/render-register">Register</a>
-                    </li>
-                    <li>
-                        <a href="/render-cart">Cart</a> 
-                    </li>
+                    <% if(is_loggedin){ %>
+                        <li>
+                            <a href="/logout">Logout</a>
+                        </li>
+                        <li>
+                            <a href="/render-cart">Cart</a> 
+                        </li>
+                    <% }else { %>
+                        <li>
+                            <a href="/render-login">Login</a>
+                        </li>
+                        <li>
+                            <a href="/render-register">Register</a>
+                        </li>
+                    <% } %>        
                 </ul>
             </div>
         </nav>

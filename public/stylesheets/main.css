@@ -8,10 +8,13 @@ header {
 }
 
 header h1 {
-    font-family: 'Over the Rainbow', cursive;
     font-size:7em;
     color: black;
     margin-top: 75px;
+}
+
+h1 {
+    font-family: 'Over the Rainbow', cursive;
 }
 
 body {
@@ -77,4 +80,22 @@ nav li {
 
 .navbar-default .navbar-nav>li>a {
     color: black;
+}
+
+.cart img {
+    height: 125px;
+}
+
+.filter-form {
+    padding-left: 15px;
+    margin-bottom: 25px;
+}
+
+.filter-form select {
+    padding-top: 5px;
+    padding-bottom: 6px;
+}
+
+.filter-form p {
+    margin-top: 40px;
 }
