@@ -52,9 +52,7 @@ function handleLogin(req, res) {
                 req.session.userid = results.rows[0]['userid'];
                 req.session.is_loggedin = true;
             }else{
-                //console.log("No Bacon!")
-                //console.log(err);
-                //console.log(response);
+                res.render('pages/login');
             }
             res.render('pages/cart', {
                 is_loggedin: req.session.is_loggedin || false,
