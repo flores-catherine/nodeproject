@@ -40,11 +40,11 @@ main h1 {
 
 .card {
     height: 450px;
-    width: 22rem;
+    width: 99%;
     border: solid #99999B 2px;
     padding: 10px;
     text-align: center;
-    margin-bottom: 25px;
+    margin: auto auto 25px auto;
     position: relative;
 }
 
@@ -98,4 +98,24 @@ nav li {
 
 .filter-form p {
     margin-top: 40px;
+}
+
+footer {
+    border-top: solid black 5px;
+    margin-top: 25px;
+}
+
+footer p {
+    padding: 15px;
+}
+
+
+@media screen and (max-width: 780px){
+    header h1 {
+        font-size:6em;
+        margin-top:0;
+    }
+    header img {
+        width: 300px;
+    }
 }

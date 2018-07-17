@@ -6,11 +6,14 @@
 </head>
 
 <body>
-<header>
+<header class="container">
     <% include ../partials/header.ejs , {is_loggedin: is_loggedin} %>
 </header>
-<div class="container">
-    <h1>Transaction was completed successfully!</h1>
-</div>
+<main>
+    <div class="container">
+        <h1>Transaction was completed successfully!</h1>
+    </div>
+</main>
+<% include ../partials/footer.ejs %>
 </body>
 </html>

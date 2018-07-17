@@ -5,48 +5,50 @@
 </head>
 
 <body>
-<header>
+<header class="container">
     <% include ../partials/header.ejs %>
 </header>
-<div class="container cart">
-    <h1>Shopping Cart</h1>
-    <form method="post" action="/completePurchase">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% cart_items.forEach(function(cart_item){%>
-                <tr>
+<main >
+    <div class="container cart">
+        <h1>Shopping Cart</h1>
+        <form method="post" action="/completePurchase">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% cart_items.forEach(function(cart_item){%>
+                    <tr>
 
-                    <td>
-                        <h2><%= cart_item.name %></h2>
-                        <img src="/images/<%= cart_item.img %>">
-                        <p><a href="/removeItem?id=<%= cart_item.prodID %>">Remove</a></p>
-                    </td>
-                    <td>
-                        <select name="productQuantity">
-                            <% for(var i=1; i<=cart_item.quantity; i++) {%>
-                                <option value="<%= i %>"> <%= i %></option>
-                            <%}%>
-                        </select>
-                        <a href="/updateTotal">Update</a>
-                        <input type="hidden" name="numinstock" value="<%= cart_item.quantity %>">
-                    </td>
-                    <td>$<%= cart_item.price %></td>
-<!--                    <td>$<productprice%></td>-->
-                </tr>
-                <%});%>
-            </tbody>
-        </table>
-        <button type="submit" class="btn btn-default">Place Your Order</button>
-    </form>
-</div>
-    <h2></h2>
+                        <td>
+                            <h2><%= cart_item.name %></h2>
+                            <img src="/images/<%= cart_item.img %>">
+                            <p><a href="/removeItem?id=<%= cart_item.prodID %>">Remove</a></p>
+                        </td>
+                        <td>
+                            <select name="productQuantity">
+                                <% for(var i=1; i<=cart_item.quantity; i++) {%>
+                                    <option value="<%= i %>"> <%= i %></option>
+                                <%}%>
+                            </select>
+                            <a href="/updateTotal">Update</a>
+                            <input type="hidden" name="numinstock" value="<%= cart_item.quantity %>">
+                        </td>
+                        <td>$<%= cart_item.price %></td>
+    <!--                    <td>$<productprice%></td>-->
+                    </tr>
+                    <%});%>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-default">Place Your Order</button>
+        </form>
+    </div>
+</main>
+<% include ../partials/footer.ejs %>
     </body>
 </html>

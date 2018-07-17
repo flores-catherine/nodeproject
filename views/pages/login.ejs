@@ -6,20 +6,23 @@
 </head>
 
 <body>
-<header>
+<header class="container">
     <% include ../partials/header.ejs , {is_loggedin: is_loggedin} %>
 </header>
-<div class="container">
-    <h1>Login here</h1>
-     <form method="post" action="/handleLoginRequest">
-        <div class="form-group">
-            <input name="email"  type="email" placeholder="email address"> 
-        </div>
-         <div class="form-group">
-            <input name="password" type="password"  placeholder="password" required>
-         </div>
-        <button type="submit" class="btn btn-default">Login</button>
-    </form>
-</div>
+<main>
+    <div class="container">
+        <h1>Login here</h1>
+         <form method="post" action="/handleLoginRequest">
+            <div class="form-group">
+                <input name="email"  type="email" placeholder="email address"> 
+            </div>
+             <div class="form-group">
+                <input name="password" type="password"  placeholder="password" required>
+             </div>
+            <button type="submit" class="btn btn-default">Login</button>
+        </form>
+    </div>
+</main>
+<% include ../partials/footer.ejs %>
 </body>
 </html>
