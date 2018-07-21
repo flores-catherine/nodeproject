@@ -41,7 +41,7 @@ function handleLogin(req, res) {
         if (err) {
             console.log(err);
         } else{
-            console.log(results.rows[0]);
+            console.log("success");
         }
         
         const hash = results.rows[0]['userpassword'];

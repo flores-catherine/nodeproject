@@ -66,6 +66,8 @@ app.get('/filterProducts', productcontroller.buildProductDisplayCategory);
 
 app.get('/addToCart', productcontroller.addProductToCart);
 
+app.get('/updateCart/:id/:quantity', productcontroller.updateProductQuant);
+
 app.get('/removeItem', productcontroller.removeProduct);
 
 

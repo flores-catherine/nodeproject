@@ -2,6 +2,7 @@
 <html>
 <head>
   <% include ../partials/head.ejs %>
+    <script src="/scripts/cart.js"></script>
 </head>
 
 <body>
@@ -28,19 +29,17 @@
                         <td>
                             <h2><%= cart_item.name %></h2>
                             <img src="/images/<%= cart_item.img %>">
-                            <p><a href="/removeItem?id=<%= cart_item.prodID %>">Remove</a></p>
                         </td>
                         <td>
-                            <select name="productQuantity">
+                            <select name="productQuantity" onchange="prepareData(this)" id="<%= cart_item.prodID %>">
                                 <% for(var i=1; i<=cart_item.quantity; i++) {%>
                                     <option value="<%= i %>"> <%= i %></option>
                                 <%}%>
                             </select>
-                            <a href="/updateTotal">Update</a>
                             <input type="hidden" name="numinstock" value="<%= cart_item.quantity %>">
                         </td>
                         <td>$<%= cart_item.price %></td>
-    <!--                    <td>$<productprice%></td>-->
+                        <td id="<%= cart_item.img %>">$<%= cart_item.price %></td>
                     </tr>
                     <%});%>
                 </tbody>

@@ -50,6 +50,7 @@ function addProductToCart(req,res){
         img:req.query.image,
         name:req.query.product,
         price: req.query.price,       
+        numDesired: 1,       
         quantity: req.query.numinstock       
     };
     var usercart = req.session.cart;
@@ -58,6 +59,26 @@ function addProductToCart(req,res){
 //    console.log(usercart);
     res.redirect('/');
 }
+
+function updateProductQuant(req,res){
+//    console.log(req.params.id);
+    var id = req.params.id;
+    var price = 0;
+    var item_name;
+    req.session.cart.forEach(function(cart_item){
+        if (cart_item.prodID == id){
+            cart_item.numDesired = req.params.quantity;
+            price = cart_item.price;
+            image = cart_item.img
+        }
+    });
+    res.json({  price:price,
+                quantity: req.params.quantity,
+                img: image
+    });
+    
+}
+
 
 function removeProduct(req,res){
     var usercart = req.session.cart;
@@ -73,7 +94,7 @@ function removeProduct(req,res){
 
 function completeTransaction(req,res){
     cart_items = req.session.cart
-    //console.log(cart_items);
+//    console.log(cart_items);
     cart_items.forEach(function(cart_item){
         var orderNum = req.body.productQuantity;
         console.log(orderNum);
@@ -100,5 +121,6 @@ module.exports = {
     buildProductDisplayCategory:buildProductDisplayCategory,
     addProductToCart:addProductToCart,
     removeProduct:removeProduct,
-    completeTransaction:completeTransaction
+    completeTransaction:completeTransaction,
+    updateProductQuant:updateProductQuant
 };
